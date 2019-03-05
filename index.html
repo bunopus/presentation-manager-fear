@@ -31,9 +31,10 @@
 		<section data-background="#FFFFFF"><img class="fragment" data-duration="2" data-animate="fadeIn"
 																						src="img/ministry.png"></section>
 		<section data-background-video="img/lighthouse.mp4" data-background-color="black" data-background-size="cover"
-						 data-bg-lighthouse></section>
+						 data-bg-lighthouse data-background-video-loop="loop" data-black-bg></section>
 
 		<section data-background="img/title.png"></section>
+
 		<section>
 			<p>
 				<span><a href="https://www.freepik.com/free-photos-vectors/ornaments">Ornaments vector created by freepik - www.freepik.com</a></span>
@@ -66,22 +67,20 @@
             {src: 'plugin/code-fragment-highlight/code-fragment-highlight.js'},
             {src: 'plugin/global-fragments/global-fragments.js'},
             {src: 'plugin/script-runner/script-runner.js'},
-
-
         ],
         keyboard: {
             39: 'next',
             37: 'prev'
         },
-        script_runner: {
-            'data-bg-lighthouse': {
+				script_runner: {
+            'data-black-bg': {
                 'slidechanged': function (slide) {
-                    if (slide.currentSlide.hasAttribute('data-bg-lighthouse')) {
-                        enableLighthouse(true);
+                    if(slide.currentSlide.hasAttribute('data-black-bg')) {
+                        $('body').css('background-color', 'black');
                     }
                 }
-            }
-        }
+            },
+				}
     });
 
     function waitForHLJS() {
@@ -94,30 +93,13 @@
     }
 
     function cleanupEffects() {
-        enableLighthouse(false);
+        $('body').css('background-color', 'white');
     }
 
     Reveal.addEventListener('slidechanged', function () {
         cleanupEffects();
     });
 
-    // lighthouse background
-    let lightHouseTimeout;
-
-    function enableLighthouse(enable) {
-        let video = $("div[data-background-hash='nullcovernullimg/lighthouse.mp4nullblacknullnullnullnull'] video");
-
-        if (enable) {
-            video.on('ended', (_) => {
-                lightHouseTimeout = setTimeout(function () {
-                    video.get(0).play();
-                }, 5000);
-            });
-        } else {
-            video.off('ended');
-            clearTimeout(lightHouseTimeout);
-        }
-    }
 </script>
 </body>
 </html>
