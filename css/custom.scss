@@ -1,4 +1,17 @@
 .reveal {
+
+  $maincolor: #5a4a42;
+  $secondColor: #f6cc68;
+
+  .progress, .controls {
+    background: rgba(0, 0, 0, 0.2);
+    color: $secondColor;
+  }
+
+  .alt-color {
+    color: $secondColor;
+  }
+
   section {
     img {
       border: none;

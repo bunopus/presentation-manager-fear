@@ -1,3 +1,10 @@
+.reveal .progress, .reveal .controls {
+  background: rgba(0, 0, 0, 0.2);
+  color: #f6cc68; }
+
+.reveal .alt-color {
+  color: #f6cc68; }
+
 .reveal section img {
   border: none;
   background: none;
