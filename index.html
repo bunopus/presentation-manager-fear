@@ -31,20 +31,26 @@
 		<section data-background="#FFFFFF"><img class="fragment" data-duration="2" data-animate="fadeIn"
 																						src="img/ministry.png"></section>
 		<section data-background-video="img/lighthouse.mp4" data-background-color="black" data-background-size="cover"
-						 data-bg-lighthouse data-background-video-loop="loop" data-black-bg></section>
+						 data-bg-lighthouse data-background-video-loop="loop" data-black-bg data-storm-sound-start></section>
 
 		<section data-background="img/title.png" data-background-transition="none" data-transition="none"></section>
 
 		<section data-background="img/about.png">
-			<ul><li>
-				магистр
-			</li></ul>
+			<ul>
+				<li>
+					Магистр фронтенда
+				</li>
+				<li>Архижрец конференций</li>
+				<li>Тёмный светоч</li>
+			</ul>
 		</section>
-
+		<section data-storm-sound-end><img src="img/arkady.png" style="height: 500px"></section>
 		<section>
 			<p>
-				<a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by jannoon028 - www.freepik.com</a>
-				<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by rawpixel.com - www.freepik.com</a>
+				<a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by jannoon028 -
+					www.freepik.com</a>
+				<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by rawpixel.com -
+					www.freepik.com</a>
 				<span>http://www.juliawolter.com/</span>
 			</p>
 		</section>
@@ -78,16 +84,28 @@
             39: 'next',
             37: 'prev'
         },
-				script_runner: {
+        script_runner: {
             'data-black-bg': {
                 'slidechanged': function (slide) {
-                    if(slide.currentSlide.hasAttribute('data-black-bg')) {
+                    if (slide.currentSlide.hasAttribute('data-black-bg')) {
                         $('body').css('background-color', 'black');
                     }
                 }
             },
-				}
+            'data-storm-sound-start': {
+                'slidechanged': function () {
+                    audioStorm.play();
+                }
+            },
+            'data-storm-sound-end': {
+                'slidechanged': function () {
+                    audioStorm.pause();
+                }
+            },
+        }
     });
+    const audioStorm = new Audio('audio/storm.mp3');
+
 
     function waitForHLJS() {
         if (window.hljs) {
