@@ -1,30 +1,32 @@
-.reveal .progress, .reveal .controls {
-  background: rgba(0, 0, 0, 0.2);
-  color: #3f3838; }
-
-.reveal .alt-color {
-  color: #3f3838; }
-
-.reveal section img {
-  border: none;
-  background: none;
-  box-shadow: none;
-  margin: 0; }
-
-.reveal div.slide-background.present[data-background-hash="nullcovernullimg/lighthouse.mp4nullblacknullnullnullnull"] {
-  animation: fadeout 40s forwards; }
-
-.reveal ul.manuscript {
-  list-style-type: none;
-  font-family: xirwen, serif;
-  font-size: 1.3em;
-  margin-left: 40px;
-  padding-top: 100px;
-  color: #3f3838; }
-  .reveal ul.manuscript li {
-    padding-bottom: 20px; }
-    .reveal ul.manuscript li::first-letter {
-      color: #b82525; }
+.reveal {
+  background: url("../img/bg.png") repeat; }
+  .reveal .progress, .reveal .controls {
+    background: rgba(0, 0, 0, 0.2);
+    color: #3f3838; }
+  .reveal .alt-color {
+    color: #3f3838; }
+  .reveal section img {
+    border: none;
+    background: none;
+    box-shadow: none;
+    margin: 0; }
+  .reveal div.slide-background.present[data-background-hash="nullcovernullimg/lighthouse.mp4nullblacknullnullnullnull"] {
+    animation: fadeout 40s forwards; }
+  .reveal ul.manuscript {
+    list-style-type: none;
+    font-family: xirwen, serif;
+    font-size: 1.3em;
+    margin-left: 40px;
+    padding-top: 100px;
+    color: #100007; }
+    .reveal ul.manuscript li {
+      padding-bottom: 20px; }
+      .reveal ul.manuscript li::first-letter {
+        color: #b82525; }
+  .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5 {
+    font-family: "Poiret One", serif;
+    text-transform: none;
+    color: #3f3838; }
 
 @keyframes fadeout {
   from {
