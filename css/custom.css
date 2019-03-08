@@ -1,9 +1,9 @@
 .reveal .progress, .reveal .controls {
   background: rgba(0, 0, 0, 0.2);
-  color: #f6cc68; }
+  color: #3f3838; }
 
 .reveal .alt-color {
-  color: #f6cc68; }
+  color: #3f3838; }
 
 .reveal section img {
   border: none;
@@ -13,6 +13,18 @@
 
 .reveal div.slide-background.present[data-background-hash="nullcovernullimg/lighthouse.mp4nullblacknullnullnullnull"] {
   animation: fadeout 40s forwards; }
+
+.reveal ul.manuscript {
+  list-style-type: none;
+  font-family: xirwen, serif;
+  font-size: 1.3em;
+  margin-left: 40px;
+  padding-top: 100px;
+  color: #3f3838; }
+  .reveal ul.manuscript li {
+    padding-bottom: 20px; }
+    .reveal ul.manuscript li::first-letter {
+      color: #b82525; }
 
 @keyframes fadeout {
   from {

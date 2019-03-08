@@ -1,15 +1,19 @@
 .reveal {
 
-  $maincolor: #5a4a42;
-  $secondColor: #f6cc68;
+  $smocky_black: rgba(16, 0, 7, 1);
+  $raisin_black: rgb(63, 56, 56);
+  $purple: rgba(43, 1, 30, 1);
+  $green: rgba(59, 96, 71, 1);
+  $gold: rgba(246, 204, 104, 1);
+  $red: #b82525;
 
   .progress, .controls {
     background: rgba(0, 0, 0, 0.2);
-    color: $secondColor;
+    color: $raisin_black;
   }
 
   .alt-color {
-    color: $secondColor;
+    color: $raisin_black;
   }
 
   section {
@@ -26,10 +30,29 @@
 
   }
 
+  ul.manuscript {
+    list-style-type: none;
+    font-family: xirwen, serif;
+    font-size: 1.3em;
+    margin-left: 40px;
+    padding-top: 100px;
+    li {
+      padding-bottom: 20px;
+      &::first-letter {
+        color: #b82525;
+      }
+    }
+    color: $raisin_black;
+  }
+
 }
 
 @keyframes fadeout {
-  from { opacity: 1; }
-  to   { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
