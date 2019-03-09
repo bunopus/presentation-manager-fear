@@ -60,6 +60,9 @@
       .reveal .quiz .answers div.specialist {
         background-color: #652b2a; }
 
+.reveal .advise h3 {
+  padding-top: 100px; }
+
 @keyframes fadeout {
   from {
     opacity: 1; }
