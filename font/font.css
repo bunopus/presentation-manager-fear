@@ -14,5 +14,13 @@
     url('poiretone-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'papaya_sunriseregular';
+    src: url('papaya_sunrise_d.woff2') format('woff2'),
+    url('papaya_sunrise_d.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
 }

@@ -7,8 +7,6 @@
   $gold: rgba(246, 204, 104, 1);
   $red: #b82525;
 
-  background: url("../img/bg.png") repeat;
-
   .progress, .controls {
     background: rgba(0, 0, 0, 0.2);
     color: $raisin_black;
@@ -49,9 +47,8 @@
     padding-right: 100px;
   }
 
-  h1, h2, h3, h4, h5 {
-    font-family: "Poiret One", serif;
-    text-transform: none;
+  h1, h2, h3, h4, h5, & {
+    font-family: papaya_sunriseregular, serif;
     color: $raisin_black;
   }
 
