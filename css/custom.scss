@@ -32,19 +32,21 @@
 
   }
 
-  ul.manuscript {
-    list-style-type: none;
+  .manuscript {
     font-family: xirwen, serif;
-    font-size: 1.3em;
-    margin-left: 40px;
-    padding-top: 100px;
-    li {
-      padding-bottom: 20px;
+    p {
+      font-size: 18px;
+    }
+    h4 {
+      font-family: xirwen, serif;
       &::first-letter {
         color: #b82525;
       }
     }
     color: $smocky_black;
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
   }
 
   h1, h2, h3, h4, h5 {
