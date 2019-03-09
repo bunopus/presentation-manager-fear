@@ -31,6 +31,35 @@
   font-family: papaya_sunriseregular, serif;
   color: #3f3838; }
 
+.reveal h3 {
+  line-height: 1.7em; }
+
+.reveal .highlighted {
+  color: #b82525; }
+
+.reveal .quiz {
+  line-height: 1.7em; }
+  .reveal .quiz .question {
+    border-radius: 25px;
+    border: 3px dashed #100007;
+    padding: 20px;
+    background-color: white; }
+  .reveal .quiz .answers {
+    display: -ms-flexbox;
+    display: flex; }
+    .reveal .quiz .answers div {
+      -ms-flex: 50%;
+          flex: 50%;
+      border-radius: 25px;
+      border: 3px dashed #100007;
+      padding: 10px;
+      margin: 50px;
+      color: white; }
+      .reveal .quiz .answers div.manager {
+        background-color: #345a23; }
+      .reveal .quiz .answers div.specialist {
+        background-color: #652b2a; }
+
 @keyframes fadeout {
   from {
     opacity: 1; }

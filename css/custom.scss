@@ -52,6 +52,45 @@
     color: $raisin_black;
   }
 
+  h3 {
+    line-height: 1.7em;
+  }
+
+  .highlighted {
+    color: $red;
+  }
+
+  .quiz {
+    line-height: 1.7em;
+
+    .question {
+      border-radius: 25px;
+      border: 3px dashed $smocky_black;
+      padding: 20px;
+      background-color: white;
+    }
+
+    .answers {
+      display: flex;
+
+      div {
+        flex: 50%;
+        border-radius: 25px;
+        border: 3px dashed $smocky_black;
+        padding: 10px;
+        margin: 50px;
+        color: white;
+
+        &.manager {
+          background-color: #345a23;
+        }
+
+        &.specialist {
+          background-color: #652b2a;
+        }
+      }
+    }
+  }
 }
 
 @keyframes fadeout {
