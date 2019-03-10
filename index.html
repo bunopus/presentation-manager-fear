@@ -18,6 +18,8 @@
 
 	<link rel="stylesheet" href="font/font.css">
 
+	<link rel="stylesheet" href="plugin/chartist/chartist.min.css">
+
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -43,21 +45,21 @@
 				<h4 style="text-transform: none">About me</h4>
 				<p>
 					If heaven ever wanted to do a good deed for me,
-	then such would be the complete elimination of the consequences of an accidental confluence
-	circumstances, which prompted me to take a look at one paper. In another
-	the situation could not make me look at this old number
-	of the Australian magazine "Sydney Bulletin" dated April 18, 1925. is he
-	escaped from the attention and the firm that was engaged in the collection of newspaper and
-	journal clippings for my grandfather,
-	By that time, I almost quit studying what my grandfather called "The Cult
-	Ctulhu ", and was visiting one of his friend, a scientist from Paterson,
-	the state of New Jersey, the custodian of a local museum, a fairly well-known specialist
-	on mineralogy. Considering somehow samples of stones from the museum’s storerooms, I
-	drew attention to a strange image on old paper, laid on
-	shelf under the stones. This was exactly the "Sydney Bulletin", which I
-	I will mention ~ 1, and the picture was made by the method of autotype
-	image of a scary stone figure, almost identical to the one that Legress
-	found in the marshes.
+					then such would be the complete elimination of the consequences of an accidental confluence
+					circumstances, which prompted me to take a look at one paper. In another
+					the situation could not make me look at this old number
+					of the Australian magazine "Sydney Bulletin" dated April 18, 1925. is he
+					escaped from the attention and the firm that was engaged in the collection of newspaper and
+					journal clippings for my grandfather,
+					By that time, I almost quit studying what my grandfather called "The Cult
+					Ctulhu ", and was visiting one of his friend, a scientist from Paterson,
+					the state of New Jersey, the custodian of a local museum, a fairly well-known specialist
+					on mineralogy. Considering somehow samples of stones from the museum’s storerooms, I
+					drew attention to a strange image on old paper, laid on
+					shelf under the stones. This was exactly the "Sydney Bulletin", which I
+					I will mention ~ 1, and the picture was made by the method of autotype
+					image of a scary stone figure, almost identical to the one that Legress
+					found in the marshes.
 				</p>
 			</div>
 			<img src="img/skull.png">
@@ -75,34 +77,59 @@
 			<section data-background="img/pants/5.png" data-transition="none" data-background-transition="none"></section>
 			<section data-background="img/pants/6.png" data-transition="none" data-background-transition="none"></section>
 			<section data-background="img/pants/7.png" data-transition="none" data-background-transition="none"></section>
-			<section data-background="img/body.png"><h3>В чём разница между менеджером и <span class="highlighted">не</span> менеджером?</h3></section>
+			<section data-background="img/body.png"><h3>В чём разница между менеджером и <span class="highlighted">не</span>
+				менеджером?</h3></section>
 			<section><img src="img/dice.png" style="height: 200px"></section>
 			<section data-background="img/quiz-bg.png">
 				<div class="quiz">
-					<div class="question">Сотрудник хочет уволиться потому что недоволен задачами</div>
+					<div class="question">На проде упал код, который вы знаете как чинить</div>
 					<div class="answers">
-						<div class="manager fragment" data-animate="tada" data-duration="0.5">Скажу ему что он козёл</div>
-						<div class="specialist fragment" data-animate="tada" data-duration="0.5">Запущу опрос 360</div>
+						<div class="manager fragment" data-animate="tada" data-duration="0.5">Позвоню автору, попрошу починить</div>
+						<div class="specialist fragment" data-animate="tada" data-duration="0.5">Починю сам</div>
+					</div>
+				</div>
+			</section>
+			<section data-background="img/quiz-bg.png">
+				<div class="quiz">
+					<div class="question">На проде опять упал код, того же автора</div>
+					<div class="answers">
+						<div class="manager fragment" data-animate="tada" data-duration="0.5">Создам митинг на тему 5 whys</div>
+						<div class="specialist fragment" data-animate="tada" data-duration="0.5">Напишу тест и настрою линтер</div>
 					</div>
 				</div>
 			</section>
 			<section data-background="black">
 				<h3>Вся работа <span style="color: #F6CC68">менеджера</span> строится на взаимодействии с другими людьми</h3>
 			</section>
-			<section data-background="img/advise.png" class="advise"><h3>Всегда помните, в какой вы штанине</h3></section>
+			<section data-background="img/advise.png" class="advise"><h3>Всегда понимайте, какая нога у вас сейчас болит</h3>
+			</section>
+			<section><img src="img/drunk-pants.png"></section>
+			<section><img src="img/pants-right.png" style="height: 500px"></section>
 		</section>
 
-		<section>
-			<section><h1>Инженерный шовинизм</h1></section>
-		</section>
+
 		<section>
 			<section><h1>Страх</h1></section>
+			<section data-chart-fear-init>
+				<h5 style="color: rgba(0,0,0,.4)">Страх</h5>
+				<div class="chart line-chart" style="width: 1000px; height: 600px; font-size:16px"></div>
+				<div class="fragment" data-chart-fear-1></div>
+				<div class="fragment" data-chart-fear-2></div>
+				<div class="fragment" data-chart-fear-3></div>
+				<div class="fragment" data-chart-fear-4></div>
+				<div class="fragment" data-chart-fear-5></div>
+			</section>
 		</section>
+
+
 		<section>
 			<section><h1>Отвращение</h1></section>
 		</section>
 		<section>
 			<section><h1>Что делать</h1></section>
+		</section>
+		<section>
+			<section><h1>Стыд</h1></section>
 		</section>
 
 
@@ -118,6 +145,7 @@
 				<span><a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by vilmosvarga - www.freepik.com</a></span>
 				<span><a href="https://www.freepik.com/free-photos-vectors/icon">Icon vector created by freepik - www.freepik.com</a></span>
 				Font by <a href="http://www.fontspace.com/sharkshock/papaya-sunrise">fontspace</a>
+				<a href="https://www.freepik.com/free-photos-vectors/icon">Icon vector created by freepik - www.freepik.com</a>
 			</p>
 		</section>
 	</div>
@@ -139,12 +167,14 @@
             {src: 'plugin/highlight/highlight.js', async: true, callback: waitForHLJS},
             {src: 'bower_components/jquery/dist/jquery.min.js'},
             {src: 'js/animations.js'},
+            {src: 'js/fear_chart.js'},
             {src: 'plugin/alt-arrows/alt-arrows.js', async: true},
             {src: 'plugin/blur-background/blur-background.js'},
             {src: 'plugin/loader-splashscreen/loader-splashscreen.js'},
             {src: 'plugin/code-fragment-highlight/code-fragment-highlight.js'},
             {src: 'plugin/global-fragments/global-fragments.js'},
             {src: 'plugin/script-runner/script-runner.js'},
+            {src: 'plugin/chartist/chartist.js'},
         ],
         keyboard: {
             39: 'next',
@@ -168,10 +198,74 @@
                     audioStorm.pause();
                 }
             },
+            'data-chart-fear-init': {
+                'slidechanged': function (event) {
+                    let slide = event.currentSlide;
+                    let container = slide.getElementsByClassName('chart')[0];
+                    fear_chart = new FearChart(container);
+                }
+            },
+            'data-chart-fear-1': {
+                'fragmentshown': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7])
+                    });
+                },
+                'fragmenthidden': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7])
+                    });
+                }
+            },
+            'data-chart-fear-2': {
+                'fragmentshown': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7, 1])
+                    });
+                },'fragmenthidden': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7, 1])
+                    });
+                }
+            },
+            'data-chart-fear-3': {
+                'fragmentshown': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7, 1, 1])
+                    });
+                }, 'fragmenthidden': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7, 1, 1])
+                    });
+                }
+            },
+            'data-chart-fear-4': {
+                'fragmentshown': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7, 1, 1, 4])
+                    });
+                },  'fragmenthidden': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7, 1, 1, 4])
+                    });
+                }
+            },
+            'data-chart-fear-5': {
+                'fragmentshown': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7, 1, 1, 4, 7])
+                    });
+                },  'fragmenthidden': function () {
+                    fear_chart.update({
+                        series: new Array([9, 7, 1, 1, 4, 7])
+                    });
+                }
+            },
         }
     });
-    const audioStorm = new Audio('audio/storm.mp3');
 
+    const audioStorm = new Audio('audio/storm.mp3');
+    let fear_chart;
 
     function waitForHLJS() {
         if (window.hljs) {
@@ -188,6 +282,13 @@
 
     Reveal.addEventListener('slidechanged', function () {
         cleanupEffects();
+    });
+
+    Reveal.addEventListener('slidechanged', function (event) {
+        var chart = event.currentSlide.querySelector('.chart');
+        if (chart && chart.__chartist__) {
+            chart.__chartist__.update();
+        }
     });
 
 </script>
