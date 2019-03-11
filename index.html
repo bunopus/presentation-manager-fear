@@ -99,7 +99,7 @@
 				</div>
 			</section>
 			<section data-background="black">
-				<h3>Вся работа <span style="color: #F6CC68">менеджера</span> строится на взаимодействии с другими людьми</h3>
+				<h3>Вся работа <span class="yellow-highlight">менеджера</span> строится на взаимодействии с другими людьми</h3>
 			</section>
 			<section data-background="img/advise.png" class="advise"><h3>Всегда понимайте, какая нога у вас сейчас болит</h3>
 			</section>
@@ -113,11 +113,29 @@
 			<section data-chart-fear-init>
 				<h5 style="color: rgba(0,0,0,.4)">Страх</h5>
 				<div class="chart line-chart" style="width: 1000px; height: 600px; font-size:16px"></div>
-				<div class="fragment" data-chart-fear-1></div>
-				<div class="fragment" data-chart-fear-2></div>
-				<div class="fragment" data-chart-fear-3></div>
-				<div class="fragment" data-chart-fear-4></div>
-				<div class="fragment" data-chart-fear-5></div>
+				<div class="fragment" data-chart-fear='{"show":[9], "hide":[]}'></div>
+				<div class="fragment" data-chart-fear='{"show":[9, 7], "hide":[9]}'></div>
+				<div class="fragment" data-chart-fear='{"show":[9, 7, 1], "hide":[9, 7]}'></div>
+				<div class="fragment" data-chart-fear='{"show":[9, 7, 1, 1], "hide":[9, 7, 2]}'></div>
+			</section>
+			<section>
+				<img src="img/hr-catch.png">
+			</section>
+			<section data-chart-fear-init="[9, 7, 1, 1]">
+				<h5 style="color: rgba(0,0,0,.4)">Страх</h5>
+				<div class="chart line-chart" style="width: 1000px; height: 600px; font-size:16px"></div>
+				<div class="fragment" data-chart-fear='{"show":[9, 7, 1, 1, 4], "hide":[9, 7, 1, 1]}'></div>
+				<div class="fragment" data-chart-fear='{"show":[9, 7, 1, 1, 4, 7], "hide":[9, 7, 1, 1, 4]}'></div>
+			</section>
+			<section data-background="black">
+				<h3><span class="yellow-highlight">Менеджер</span> теснее всего связан с компанией</h3>
+			</section>
+			<section data-background="img/skull-bg.png">
+				<h3>
+					<span class="fragment">Меня</span> <span class="fragment">больше</span> <span class="fragment highlighted">никуда</span>
+					<span class="fragment">не</span> <span class="fragment">возьмут</span><span class="fragment"
+								style="font-family: 'Comic Sans MS',fantasy; font-size: 1.7em; font-weight: lighter">!</span>
+				</h3>
 			</section>
 		</section>
 
@@ -135,6 +153,7 @@
 
 		<section>
 			<p>
+				<span><a href="https://publicdomainvectors.org/en/free-clipart/Grumpy-cat/38336.html">Cat</a></span>
 				<a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by jannoon028 -
 					www.freepik.com</a>
 				<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by rawpixel.com -
@@ -142,10 +161,14 @@
 				<span>http://www.juliawolter.com/</span>
 				<span>https://www.1001fonts.com/xirwena-font.html</span>
 				<span>https://www.fontsquirrel.com/fonts/poiret-one</span>
+				<span>https://www.dafont.com/papaya-sunrise.font</span>
+				<a href="https://www.freepik.com/free-photos-vectors/hand">Hand vector created by sergey_kandakov -
+					www.freepik.com</a>
 				<span><a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by vilmosvarga - www.freepik.com</a></span>
 				<span><a href="https://www.freepik.com/free-photos-vectors/icon">Icon vector created by freepik - www.freepik.com</a></span>
 				Font by <a href="http://www.fontspace.com/sharkshock/papaya-sunrise">fontspace</a>
 				<a href="https://www.freepik.com/free-photos-vectors/icon">Icon vector created by freepik - www.freepik.com</a>
+
 			</p>
 		</section>
 	</div>
@@ -199,68 +222,26 @@
                 }
             },
             'data-chart-fear-init': {
-                'slidechanged': function (event) {
+                'slidechanged': function (event, data) {
                     let slide = event.currentSlide;
                     let container = slide.getElementsByClassName('chart')[0];
                     fear_chart = new FearChart(container);
+                    if (data) {
+                        const parsed = JSON.parse(data);
+                        fear_chart.update({
+                            series: new Array(parsed)
+                        });
+                    }
                 }
             },
-            'data-chart-fear-1': {
-                'fragmentshown': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7])
-                    });
+            'data-chart-fear': {
+                'fragmentshown': (_, data) => {
+                    updateFearChart(data, true)
                 },
-                'fragmenthidden': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7])
-                    });
-                }
-            },
-            'data-chart-fear-2': {
-                'fragmentshown': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7, 1])
-                    });
-                },'fragmenthidden': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7, 1])
-                    });
-                }
-            },
-            'data-chart-fear-3': {
-                'fragmentshown': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7, 1, 1])
-                    });
-                }, 'fragmenthidden': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7, 1, 1])
-                    });
-                }
-            },
-            'data-chart-fear-4': {
-                'fragmentshown': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7, 1, 1, 4])
-                    });
-                },  'fragmenthidden': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7, 1, 1, 4])
-                    });
-                }
-            },
-            'data-chart-fear-5': {
-                'fragmentshown': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7, 1, 1, 4, 7])
-                    });
-                },  'fragmenthidden': function () {
-                    fear_chart.update({
-                        series: new Array([9, 7, 1, 1, 4, 7])
-                    });
-                }
-            },
+                'fragmenthidden': (_, data) => {
+                    updateFearChart(data, false)
+                },
+            }
         }
     });
 
@@ -278,6 +259,13 @@
 
     function cleanupEffects() {
         $('body').css('background-color', 'white');
+    }
+
+    function updateFearChart(data, show) {
+        const parsed = JSON.parse(data);
+        fear_chart.update({
+            series: new Array(show ? parsed.show : parsed.hide)
+        });
     }
 
     Reveal.addEventListener('slidechanged', function () {

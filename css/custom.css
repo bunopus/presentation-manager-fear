@@ -63,6 +63,9 @@
 .reveal .advise h3 {
   padding-top: 100px; }
 
+.reveal .yellow-highlight {
+  color: #F6CC68; }
+
 @keyframes fadeout {
   from {
     opacity: 1; }
