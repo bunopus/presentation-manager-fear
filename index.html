@@ -84,7 +84,8 @@
 				<div class="quiz">
 					<div class="question">На проде упал код, который вы знаете как чинить</div>
 					<div class="answers">
-						<div class="manager fragment" data-animate="tada" data-duration="0.5">Позвоню автору, попрошу починить</div>
+						<div class="manager fragment" data-animate="tada" data-duration="0.5">Найду автора и раз<span
+										class="missed-font">...</span><span class="fragment">бужу его</span></div>
 						<div class="specialist fragment" data-animate="tada" data-duration="0.5">Починю сам</div>
 					</div>
 				</div>
@@ -106,8 +107,20 @@
 			<section><img src="img/drunk-pants.png"></section>
 			<section><img src="img/pants-right.png" style="height: 500px"></section>
 		</section>
+		<section>
+			<section data-next-after="2500" data-transition="none none" data-background-transition="none none"><h1 data-animate="rollOut" data-delay="2">ОСОС</h1></section>
+			<section data-transition="none none" data-background-transition="none none"><h1>СОСО</h1></section>
 
-
+			<section data-transition="fade"><h1>С.О.С.О.</h1></section>
+			<section data-transition="fade">
+				<div class="feelings-list">
+					<div>Страх</div>
+					<div>Отвращение</div>
+					<div>Стыд</div>
+					<div>Отчаяние</div>
+				</div>
+			</section>
+		</section>
 		<section>
 			<section><h1>Страх</h1></section>
 			<section data-chart-fear-init>
@@ -133,8 +146,8 @@
 			<section data-background="img/skull-bg.png">
 				<h3>
 					<span class="fragment">Меня</span> <span class="fragment">больше</span> <span class="fragment highlighted">никуда</span>
-					<span class="fragment">не</span> <span class="fragment">возьмут</span><span class="fragment"
-								style="font-family: 'Comic Sans MS',fantasy; font-size: 1.7em; font-weight: lighter">!</span>
+					<span class="fragment">не</span> <span class="fragment">возьмут</span><span
+								class="fragment missed-font">!</span>
 				</h3>
 			</section>
 		</section>
@@ -144,16 +157,46 @@
 			<section><h1>Отвращение</h1></section>
 			<section><img src="img/calendar-color.png"></section>
 			<section><h4 style="padding-bottom: 50px">Не забывайте про обед</h4><img src="img/lunch.png"></section>
+			<section><img src="img/rotter.jpeg" class="rotter">
+				<div>Джулиан Роттер</div>
+			</section>
+			<section><h4>Локус контроля</h4></section>
+			<section>
+				<div class="locus">
+					<div class="fragment"><img src="img/internal-locus.jpg">
+						<div>Внутренний</div>
+					</div>
+					<div class="fragment"><img src="img/external-locus.jpg">
+						<div>Внешний</div>
+					</div>
+				</div>
+			</section>
+			<section data-background="black">
+				<h3><span class="yellow-highlight">Менеджер</span> не может затащить всё сам</h3>
+			</section>
+			<section data-background="black">
+				<h3>Менеджер <span class="highlighted">ничего</span> не может затащить сам</h3>
+			</section>
 		</section>
 
 		<section>
 			<section><h1>Стыд</h1></section>
-		</section>
-		
-		<section>
-			<section><h1>Что делать</h1></section>
+			<section data-background="img/drinking.png"><h3>С кем крутым вы бы выпили?</h3></section>
+			<section data-chart-poll="">
+				<h5 style="color: rgba(0,0,0,.4)">Популярность</h5>
+				<div class="chart bar-chart" style="width: 1000px; height: 600px; font-size:16px"></div>
+			</section>
 		</section>
 
+		<section>
+			<section><h1>Отчаяние</h1></section>
+		</section>
+
+		<section>
+			<section><h1>Что делать</h1></section>
+			<section>Тест Розенцвейга https://vsetesti.ru/400/</section>
+
+		</section>
 
 
 		<section>
@@ -206,7 +249,15 @@
         ],
         keyboard: {
             39: 'next',
-            37: 'prev'
+            37: 'prev',
+						49: function () {
+                popularityPollData.nontech += 1;
+                updatePopularityChart(popularityPollData);
+            },
+						50: function () {
+                popularityPollData.tech += 1;
+                updatePopularityChart(popularityPollData);
+            }
         },
         script_runner: {
             'data-black-bg': {
@@ -246,12 +297,60 @@
                 'fragmenthidden': (_, data) => {
                     updateFearChart(data, false)
                 },
-            }
+            },
+            'data-next-after': {
+                'slidechanged': function (_, data) {
+                    moveNext(data);
+                },
+                'fragmentshown': (_, data) => {
+                    moveNext(data);
+                },
+                'fragmenthidden': (_, data) => {
+                    moveNext(data);
+                },
+            },
+            'data-chart-poll': {
+                'slidechanged': function (event) {
+                    console.log(popularityPollData);
+                    let slide = event.currentSlide;
+                    let container = slide.getElementsByClassName('chart')[0];
+                    container.innerHtml = "";
+                    popularity_chart = Chartist.Bar(container, {
+                        labels: ['NonTech', 'Tech'],
+												series: [popularityPollData.nontech, popularityPollData.tech]
+                    }, {
+                        low: 0,
+                        showArea: true,
+                        chartPadding: 20,
+												distributeSeries: true,
+                        fullWidth: true,
+                        axisY: {
+                            onlyInteger: true
+                        },
+                    });
+                    popularity_chart.on('draw', function(data) {
+                        if(data.type === 'bar') {
+                            data.element.animate({
+                                y2: {
+                                    begin: 600,
+                                    dur: '0.5s',
+                                    from: data.y1,
+                                    to: data.y2
+                                }
+                            });
+                        }
+                    });
+                    popularity_chart_visible = true;
+								}
+						}
         }
     });
 
     const audioStorm = new Audio('audio/storm.mp3');
     let fear_chart;
+    let popularity_chart;
+    let popularity_chart_visible = false;
+		let popularityPollData = {nontech: 0, tech: 0};
 
     function waitForHLJS() {
         if (window.hljs) {
@@ -264,6 +363,7 @@
 
     function cleanupEffects() {
         $('body').css('background-color', 'white');
+        popularity_chart_visible = false;
     }
 
     function updateFearChart(data, show) {
@@ -272,6 +372,18 @@
             series: new Array(show ? parsed.show : parsed.hide)
         });
     }
+
+    function updatePopularityChart(data) {
+			if(popularity_chart_visible){
+          popularity_chart.update({
+              series: [data.nontech, data.tech]
+          });
+			}
+    }
+
+    function moveNext(delay){
+        setTimeout(Reveal.next, delay);
+		}
 
     Reveal.addEventListener('slidechanged', function () {
         cleanupEffects();

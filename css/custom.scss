@@ -101,6 +101,55 @@
   .yellow-highlight {
     color: #F6CC68
   }
+
+  .missed-font {
+    font-family: 'Comic Sans MS', fantasy;
+    font-size: 1.7em;
+    font-weight: lighter;
+    padding-right: 10px;
+  }
+
+  .rotter {
+    border-radius: 25px;
+    border: 3px dashed $smocky_black;
+    padding: 20px;
+    margin-bottom: 50px;
+  }
+
+  .locus {
+    display: flex;
+    img {
+      height: 500px;
+    }
+  }
+  .feelings-list {
+
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 350px;
+
+    div::first-letter {
+      color: #b82525;
+      font-size: 2.5em;
+      text-align: left;
+    }
+  }
+
+  .bar-chart {
+
+    .ct-series-a line {
+      stroke: $red;
+    }
+
+    .ct-series-b line {
+      stroke: $green;
+    }
+
+    .ct-bar {
+      stroke-width: 50px;
+
+    }
+  }
 }
 
 @keyframes fadeout {

@@ -66,6 +66,42 @@
 .reveal .yellow-highlight {
   color: #F6CC68; }
 
+.reveal .missed-font {
+  font-family: 'Comic Sans MS', fantasy;
+  font-size: 1.7em;
+  font-weight: lighter;
+  padding-right: 10px; }
+
+.reveal .rotter {
+  border-radius: 25px;
+  border: 3px dashed #100007;
+  padding: 20px;
+  margin-bottom: 50px; }
+
+.reveal .locus {
+  display: -ms-flexbox;
+  display: flex; }
+  .reveal .locus img {
+    height: 500px; }
+
+.reveal .feelings-list {
+  margin: 0 auto;
+  text-align: left;
+  padding-left: 350px; }
+  .reveal .feelings-list div::first-letter {
+    color: #b82525;
+    font-size: 2.5em;
+    text-align: left; }
+
+.reveal .bar-chart .ct-series-a line {
+  stroke: #b82525; }
+
+.reveal .bar-chart .ct-series-b line {
+  stroke: #3b6047; }
+
+.reveal .bar-chart .ct-bar {
+  stroke-width: 50px; }
+
 @keyframes fadeout {
   from {
     opacity: 1; }
