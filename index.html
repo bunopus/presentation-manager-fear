@@ -239,6 +239,7 @@
             {src: 'bower_components/jquery/dist/jquery.min.js'},
             {src: 'js/animations.js'},
             {src: 'js/fear_chart.js'},
+            {src: 'js/popularity_chart.js'},
             {src: 'plugin/alt-arrows/alt-arrows.js', async: true},
             {src: 'plugin/blur-background/blur-background.js'},
             {src: 'plugin/loader-splashscreen/loader-splashscreen.js'},
@@ -252,11 +253,11 @@
             37: 'prev',
 						49: function () {
                 popularityPollData.nontech += 1;
-                updatePopularityChart(popularityPollData);
+                if(popularity_chart) popularity_chart.update(popularityPollData);
             },
 						50: function () {
                 popularityPollData.tech += 1;
-                updatePopularityChart(popularityPollData);
+                if(popularity_chart) popularity_chart.update(popularityPollData);
             }
         },
         script_runner: {
@@ -311,36 +312,10 @@
             },
             'data-chart-poll': {
                 'slidechanged': function (event) {
-                    console.log(popularityPollData);
                     let slide = event.currentSlide;
                     let container = slide.getElementsByClassName('chart')[0];
-                    container.innerHtml = "";
-                    popularity_chart = Chartist.Bar(container, {
-                        labels: ['NonTech', 'Tech'],
-												series: [popularityPollData.nontech, popularityPollData.tech]
-                    }, {
-                        low: 0,
-                        showArea: true,
-                        chartPadding: 20,
-												distributeSeries: true,
-                        fullWidth: true,
-                        axisY: {
-                            onlyInteger: true
-                        },
-                    });
-                    popularity_chart.on('draw', function(data) {
-                        if(data.type === 'bar') {
-                            data.element.animate({
-                                y2: {
-                                    begin: 600,
-                                    dur: '0.5s',
-                                    from: data.y1,
-                                    to: data.y2
-                                }
-                            });
-                        }
-                    });
-                    popularity_chart_visible = true;
+                    popularity_chart = new PopularityChart(container, popularityPollData);
+
 								}
 						}
         }
@@ -349,7 +324,6 @@
     const audioStorm = new Audio('audio/storm.mp3');
     let fear_chart;
     let popularity_chart;
-    let popularity_chart_visible = false;
 		let popularityPollData = {nontech: 0, tech: 0};
 
     function waitForHLJS() {
@@ -363,7 +337,7 @@
 
     function cleanupEffects() {
         $('body').css('background-color', 'white');
-        popularity_chart_visible = false;
+        if(popularity_chart) popularity_chart.isVisible = false;
     }
 
     function updateFearChart(data, show) {
@@ -371,14 +345,6 @@
         fear_chart.update({
             series: new Array(show ? parsed.show : parsed.hide)
         });
-    }
-
-    function updatePopularityChart(data) {
-			if(popularity_chart_visible){
-          popularity_chart.update({
-              series: [data.nontech, data.tech]
-          });
-			}
     }
 
     function moveNext(delay){
