@@ -191,16 +191,42 @@
 			<section data-background="img/rockstar/1.png"></section>
 			<section data-background="img/rockstar/2.png" data-transition="none none" data-background-transition="none none"></section>
 			<section data-background="img/rockstar/3.png" data-transition="none none" data-background-transition="none none"></section>
+			<section data-background="img/rockstar/3.png" data-transition="none none" data-background-transition="none none" data-show-fire>
+				<audio data-autoplay src="media/doom_ost.m4a"></audio>
+			</section>
+			<section></section>
+			<section><img src="img/mitings.png"></section>
+			<section><img src="img/normal.png"></section>
 		</section>
 
 		<section>
 			<section><h1>Отчаяние</h1></section>
+			<section data-background="black" data-transition="none none" data-background-transition="none none"></section>
+			<section data-background="black" data-transition="none none" data-background-transition="none none"><img src="img/frustratio/1.png"></section>
+			<section data-background="black" data-transition="none none" data-background-transition="none none"><img src="img/frustratio/2.png"></section>
+			<section data-background="black" data-transition="none none" data-background-transition="none none"><img src="img/frustratio/3.png"></section>
+			<section data-background="black" data-transition="none none" data-background-transition="none none"><img src="img/frustratio/4.png"></section>
+			<section data-background="black" data-transition="none none" data-background-transition="none none"><img src="img/frustratio/5.png"></section>
+			<section data-background="black" data-transition="none none" data-background-transition="none none"><img src="img/frustratio/5.png" class="spin"></section>
 		</section>
 
 		<section>
 			<section><h1>Что делать</h1></section>
+			<section>Резюме</section>
+			<section>найти работу сложно, нам платят за ответственность, доверие</section>
+			<section>айсберг</section>
 			<section>Тест Розенцвейга https://vsetesti.ru/400/</section>
+		</section>
 
+		<section>
+			<section>карго</section>
+			<section>поедатель</section>
+			<section>неопределившийся</section>
+		</section>
+
+		<section>
+			<section>Китай</section>
+			<section>Спасибо</section>
 		</section>
 
 
@@ -226,6 +252,9 @@
 		</section>
 	</div>
 </div>
+
+
+<div id="fire"></div>
 
 <script src="lib/js/head.min.js"></script>
 <script src="js/reveal.js"></script>
@@ -322,6 +351,11 @@
                     popularity_chart = new PopularityChart(container, popularityPollData);
 
 								}
+						},
+						'data-show-fire': {
+                'slidechanged': function (_) {
+                   $("#fire").show();
+                }
 						}
         }
     });
@@ -343,6 +377,7 @@
     function cleanupEffects() {
         $('body').css('background-color', 'white');
         if(popularity_chart) popularity_chart.isVisible = false;
+        $("#fire").hide();
     }
 
     function updateFearChart(data, show) {
