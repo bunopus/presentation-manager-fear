@@ -154,6 +154,76 @@
   .spin {
     animation: spin 4s linear infinite;
   }
+
+  .manager-bad {
+    div {
+      position: absolute;
+
+      &.visible:not(.current-fragment) {
+        animation: shake 800ms ease infinite;
+      }
+
+      &.mgr-word-1 {
+        font-size: 48pt;
+        top:190px;
+        left:304px;
+      }
+
+      &.mgr-word-2 {
+        font-size: 45pt;
+        top: 271px;
+        left: 654px;
+      }
+
+      &.mgr-word-3 {
+        font-size: 40pt;
+        top: 530px;
+        left: 680px;
+      }
+
+      &.mgr-word-4 {
+        font-size: 36pt;
+        top: 340px;
+        left: 88px;
+      }
+
+      &.mgr-word-5 {
+        font-size: 24pt;
+        top: 390px;
+        left: 618px;
+      }
+
+      &.mgr-word-6 {
+        font-size: 28pt;
+        top: 490px;
+        left: 19px;
+      }
+
+      &.mgr-word-7 {
+        font-size: 12pt;
+        top: 275px;
+        left: 20px;
+      }
+
+      &.mgr-word-8 {
+        font-size: 18pt;
+        top: 500px;
+        left: 770px;
+      }
+
+      &.mgr-word-9 {
+        font-size: 12pt;
+        top: 470px;
+        left: 575px;
+      }
+    }
+  }
+
+  .manager-good {
+    margin: 0 auto;
+    text-align: left;
+    padding-left: 140px;
+  }
 }
 
 #fire {
@@ -182,5 +252,23 @@
   100% {
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform:translate(0,0);
+  }
+
+  20%, 60% {
+    transform: translate(-2px,0);
+  }
+
+  40%, 80% {
+    transform: translate(2px,0);
+  }
+
+  100% {
+    transform: translate(0,0);
   }
 }
