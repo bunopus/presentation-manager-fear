@@ -26,7 +26,7 @@
   }
 
   div.slide-background.present[data-background-hash="nullcovernullimg/lighthouse.mp4nullblacknullnullnullnull"] {
-    animation: fadeout 40s forwards;
+    animation: fadeout 63s forwards;
 
   }
 
@@ -68,6 +68,7 @@
       border: 3px dashed $smocky_black;
       padding: 20px;
       background-color: white;
+      vertical-align: center;
     }
 
     .answers {
