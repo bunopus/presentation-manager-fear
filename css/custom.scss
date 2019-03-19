@@ -27,7 +27,9 @@
 
   div.slide-background.present[data-background-hash="nullcovernullimg/lighthouse.mp4nullblacknullnullnullnull"] {
     animation: fadeout 63s forwards;
-
+  }
+  div.slide-background.present[data-background-hash="img/east-wisdom.pngnullnullnullnullwhitenullnullnullnull"] {
+    opacity: 0.2;
   }
 
   .manuscript {
@@ -224,6 +226,35 @@
     margin: 0 auto;
     text-align: left;
     padding-left: 140px;
+  }
+
+  .info {
+
+    .twitter {
+      img {
+        width: 60px;
+        padding-right: 10px;
+        opacity: 0.9;
+      }
+      padding-bottom: 50px;
+    }
+
+
+    img.small-logo {
+      width: 50px;
+      margin: 0;
+      vertical-align:middle;
+      border-radius: 0;
+      padding-right: 5px;
+    }
+
+    .team-text {
+      padding-top: 20px;
+    }
+
+    a {
+      color: $smocky_black;
+    }
   }
 }
 

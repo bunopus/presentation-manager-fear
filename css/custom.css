@@ -14,6 +14,9 @@
 .reveal div.slide-background.present[data-background-hash="nullcovernullimg/lighthouse.mp4nullblacknullnullnullnull"] {
   animation: fadeout 63s forwards; }
 
+.reveal div.slide-background.present[data-background-hash="img/east-wisdom.pngnullnullnullnullwhitenullnullnullnull"] {
+  opacity: 0.2; }
+
 .reveal .manuscript {
   font-family: xirwen, serif;
   color: #100007;
@@ -151,6 +154,26 @@
   margin: 0 auto;
   text-align: left;
   padding-left: 140px; }
+
+.reveal .info .twitter {
+  padding-bottom: 50px; }
+  .reveal .info .twitter img {
+    width: 60px;
+    padding-right: 10px;
+    opacity: 0.9; }
+
+.reveal .info img.small-logo {
+  width: 50px;
+  margin: 0;
+  vertical-align: middle;
+  border-radius: 0;
+  padding-right: 5px; }
+
+.reveal .info .team-text {
+  padding-top: 20px; }
+
+.reveal .info a {
+  color: #100007; }
 
 #fire {
   position: absolute;
