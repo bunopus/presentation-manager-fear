@@ -123,6 +123,45 @@
 .reveal .bar-chart .ct-bar {
   stroke-width: 80px; }
 
+.reveal .bar-chart.skills .ct-series-a line {
+  stroke: #7E4B3B; }
+
+.reveal .bar-chart.skills .ct-series-b line {
+  stroke: #40767D; }
+
+.reveal .bar-chart.skills .ct-bar {
+  stroke-width: 30px; }
+
+.reveal .bar-chart.skills .ct-legend {
+  position: relative;
+  z-index: 10;
+  list-style-type: none; }
+  .reveal .bar-chart.skills .ct-legend li {
+    position: relative;
+    padding-left: 50px;
+    display: inline-block;
+    margin-right: 23px; }
+  .reveal .bar-chart.skills .ct-legend li:before {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    content: '';
+    border: 3px solid transparent;
+    border-radius: 2px; }
+  .reveal .bar-chart.skills .ct-legend li.inactive:before {
+    background: transparent; }
+  .reveal .bar-chart.skills .ct-legend.ct-legend-inside {
+    position: absolute;
+    top: 0;
+    right: 0; }
+  .reveal .bar-chart.skills .ct-legend .ct-series-0:before {
+    background-color: #7E4B3B;
+    border-color: #7E4B3B; }
+  .reveal .bar-chart.skills .ct-legend .ct-series-1:before {
+    background-color: #40767D;
+    border-color: #40767D; }
+
 .reveal .spin {
   animation: spin 4s linear infinite; }
 

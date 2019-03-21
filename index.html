@@ -174,6 +174,7 @@
 				<div class="fragment" data-chart-fear='{"show":[9, 7, 1, 1, 4, 7], "hide":[9, 7, 1, 1, 4]}'></div>
 			</section>
 			<section data-background="black">
+				<p style="color: #889387">3</p>
 				<h3><span class="yellow-highlight">Менеджер</span> теснее всего связан с компанией</h3>
 			</section>
 			<section data-background="img/skull-bg.png">
@@ -206,6 +207,7 @@
 				</div>
 			</section>
 			<section data-background="black">
+				<p style="color: #889387">4</p>
 				<h3><span class="yellow-highlight">Менеджер</span> не может затащить всё сам</h3>
 			</section>
 			<section data-background="black">
@@ -268,6 +270,19 @@
 					</div>
 				</div>
 			</section>
+
+			<section data-chart-skills-init='{"labels":["Hard Skills","Soft Skills"],"series":[[9, 4]]}'>
+				<h5 style="color: rgba(0,0,0,.4)">Навыки</h5>
+				<div class="chart bar-chart skills" style="width: 1000px; height: 600px; font-size:16px"></div>
+				<div class="fragment" data-chart-skills='{"series":[[9, 4],[3, 8]]}'></div>
+				<div class="fragment" data-chart-skills='{"labels":["Hard Skills","Soft Skills", "Company Skills"], "series":[[9, 4, 10],[3, 8, 1]]}'></div>
+			</section>
+
+			<section data-background="black">
+				<p style="color: #889387">4</p>
+				<h3><span class="yellow-highlight">Менеджеру</span> платят за доверие и ответственность</h3>
+			</section>
+
 			<section data-background="img/white-pyramid.png"><h3>Менеджер <span class="missed-font">-</span> самый
 				универсальный сотрудник</h3></section>
 			<section data-background="img/resume/1.png" data-transition="none none"
@@ -395,6 +410,7 @@
             {src: 'js/animations.js'},
             {src: 'js/fear_chart.js'},
             {src: 'js/popularity_chart.js'},
+            {src: 'js/skills_chart.js'},
             {src: 'plugin/alt-arrows/alt-arrows.js', async: true},
             {src: 'plugin/blur-background/blur-background.js'},
             {src: 'plugin/loader-splashscreen/loader-splashscreen.js'},
@@ -402,6 +418,7 @@
             {src: 'plugin/global-fragments/global-fragments.js'},
             {src: 'plugin/script-runner/script-runner.js'},
             {src: 'plugin/chartist/chartist.js'},
+            {src: 'plugin/chartist/chartist-plugin-legend/chartist-plugin-legend.js'},
             {src: 'plugin/particles/anime.min.js'},
             {src: 'plugin/particles/particles.js'},
         ],
@@ -513,13 +530,28 @@
                     }, 3000);
 
                 }
-            }
+            },
+
+            'data-chart-skills-init': {
+                'slidechanged': function (event, data) {
+                    let slide = event.currentSlide;
+                    let container = slide.getElementsByClassName('chart')[0];
+                    var parsed = JSON.parse(data);
+                    skills_chart = new SkillsChart(container, parsed);
+                }
+            },
+            'data-chart-skills': {
+                'fragmentshown': (_, data) => {
+                    updateSkillsChart(data)
+                }
+            },
         }
     });
 
     const audioStorm = new Audio('audio/storm.mp3');
     let fear_chart;
     let popularity_chart;
+    let skills_chart;
     let popularityPollData = {nontech: 0, tech: 0};
 
     function waitForHLJS() {
@@ -542,6 +574,11 @@
         fear_chart.update({
             series: new Array(show ? parsed.show : parsed.hide)
         });
+    }
+
+    function updateSkillsChart(data) {
+        const parsed = JSON.parse(data);
+        skills_chart.update(parsed);
     }
 
     function moveNext(delay) {

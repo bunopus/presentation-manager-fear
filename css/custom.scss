@@ -173,6 +173,63 @@
     }
   }
 
+  .bar-chart.skills {
+
+    .ct-series-a line {
+      stroke: #7E4B3B;
+    }
+
+    .ct-series-b line {
+      stroke: #40767D;
+    }
+
+    .ct-bar {
+      stroke-width: 30px;
+
+    }
+
+    .ct-legend {
+      position: relative;
+      z-index: 10;
+      list-style-type: none;
+
+      li {
+        position: relative;
+        padding-left: 50px;
+        display: inline-block;
+        margin-right: 23px;
+      }
+
+      li:before {
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        left: 0;
+        content: '';
+        border: 3px solid transparent;
+        border-radius: 2px;
+      }
+
+      li.inactive:before {
+        background: transparent;
+      }
+
+      &.ct-legend-inside {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      & .ct-series-0:before {
+        background-color: #7E4B3B;
+        border-color: #7E4B3B;
+      }
+      & .ct-series-1:before {
+        background-color: #40767D;
+        border-color: #40767D;
+      }
+    }
+  }
   .spin {
     animation: spin 4s linear infinite;
   }
