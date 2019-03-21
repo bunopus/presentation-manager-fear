@@ -58,11 +58,22 @@
       border: 3px dashed #100007;
       padding: 10px;
       margin: 50px;
-      color: white; }
+      color: white;
+      -ms-flex-direction: column;
+          flex-direction: column;
+      text-align: center;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-pack: center;
+          justify-content: center; }
       .reveal .quiz .answers div.manager {
         background-color: #345a23; }
       .reveal .quiz .answers div.specialist {
         background-color: #652b2a; }
+      .reveal .quiz .answers div p {
+        margin: 0;
+        padding: 0;
+        line-height: inherit; }
 
 .reveal .advise h3 {
   padding-top: 100px; }
