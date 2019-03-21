@@ -58,6 +58,14 @@
     line-height: 1.7em;
   }
 
+  ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1em;
+    text-indent: -1em;
+
+  }
+
   .highlighted {
     color: $red;
   }

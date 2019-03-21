@@ -37,6 +37,12 @@
 .reveal h3 {
   line-height: 1.7em; }
 
+.reveal ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 1em;
+  text-indent: -1em; }
+
 .reveal .highlighted {
   color: #b82525; }
 
