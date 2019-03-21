@@ -168,8 +168,8 @@
 
       &.mgr-word-1 {
         font-size: 48pt;
-        top:190px;
-        left:304px;
+        top: 190px;
+        left: 304px;
       }
 
       &.mgr-word-2 {
@@ -203,7 +203,7 @@
       }
 
       &.mgr-word-7 {
-        font-size: 12pt;
+        font-size: 22pt;
         top: 275px;
         left: 20px;
       }
@@ -239,11 +239,10 @@
       padding-bottom: 50px;
     }
 
-
     img.small-logo {
       width: 50px;
       margin: 0;
-      vertical-align:middle;
+      vertical-align: middle;
       border-radius: 0;
       padding-right: 5px;
     }
@@ -256,6 +255,29 @@
       color: $smocky_black;
     }
   }
+
+  .particles-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 500px;
+
+    .particles-canvas {
+      position: absolute;
+      pointer-events: none;
+      top: 50%;
+      left: 50%;
+      transform: translate3d(-50%, -50%, 0);
+    }
+
+    .particles-wrapper {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      will-change: transform;
+    }
+  }
+
 }
 
 #fire {
@@ -289,18 +311,19 @@
 
 @keyframes shake {
   0% {
-    transform:translate(0,0);
+    transform: translate(0, 0);
   }
 
   20%, 60% {
-    transform: translate(-2px,0);
+    transform: translate(-2px, 0);
   }
 
   40%, 80% {
-    transform: translate(2px,0);
+    transform: translate(2px, 0);
   }
 
   100% {
-    transform: translate(0,0);
+    transform: translate(0, 0);
   }
 }
+
