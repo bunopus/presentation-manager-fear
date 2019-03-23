@@ -96,7 +96,6 @@
         display: flex;
         justify-content: center;
 
-
         &.manager {
           background-color: #345a23;
         }
@@ -122,6 +121,15 @@
 
   .yellow-highlight {
     color: #F6CC68
+  }
+
+  .idea-number {
+    line-height: 1.3;
+    font-family: fantasy;
+    color: #cccccca3;
+    &::before {
+      content: '#';
+    }
   }
 
   .missed-font {
@@ -160,16 +168,15 @@
   .bar-chart {
 
     .ct-series-a line {
-      stroke: $red;
+      stroke: #7E4B3B;
     }
 
     .ct-series-b line {
-      stroke: $green;
+      stroke: #40767D;
     }
 
     .ct-bar {
       stroke-width: 80px;
-
     }
   }
 
@@ -301,7 +308,15 @@
   .manager-good {
     margin: 0 auto;
     text-align: left;
-    padding-left: 140px;
+    padding-left: 100px;
+
+    h4::before {
+      content: '-';
+      font-family: 'Comic Sans MS', fantasy;
+      font-size: 1.7em;
+      font-weight: lighter;
+      padding-right: 10px;
+    }
   }
 
   .info {
@@ -352,6 +367,11 @@
       overflow: hidden;
       will-change: transform;
     }
+  }
+
+  .sub-description {
+    font-size: 20px;
+    font-family: 'Comic Sans MS', cursive
   }
 
 }
