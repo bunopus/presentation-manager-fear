@@ -280,6 +280,15 @@
   background: url(../img/fire.gif) no-repeat center center;
   display: none; }
 
+#credits {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center; }
+  #credits, #credits a, #credits a:visited, #credits a:hover {
+    color: rgba(0, 0, 0, 0.56); }
+
 @keyframes fadeout {
   from {
     opacity: 1; }

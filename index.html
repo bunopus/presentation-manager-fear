@@ -416,7 +416,7 @@
 			</section>
 		</section>
 
-		<section data-background="img/east-wisdom.png" data-background-color="white">
+		<section data-background="img/east-wisdom.png" data-background-color="white" data-credits>
 			<div class="info">
 				<div class="twitter"><img src="img/social/twitter.png"><a href="https://twitter.com/bunopus">bunopus</a></div>
 				<div>
@@ -427,238 +427,229 @@
 				</div>
 			</div>
 		</section>
-
-
-		<section>
-			<p>
-				<span><a href="https://publicdomainvectors.org/en/free-clipart/Grumpy-cat/38336.html">Cat</a></span>
-				<a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by jannoon028 -
-					www.freepik.com</a>
-				<a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by rawpixel.com -
-					www.freepik.com</a>
-				<span>http://www.juliawolter.com/</span>
-				<span>https://www.1001fonts.com/xirwena-font.html</span>
-				<span>https://www.fontsquirrel.com/fonts/poiret-one</span>
-				<span>https://www.dafont.com/papaya-sunrise.font</span>
-				<a href="https://www.freepik.com/free-photos-vectors/hand">Hand vector created by sergey_kandakov -
-					www.freepik.com</a>
-				<span><a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by vilmosvarga - www.freepik.com</a></span>
-				<span><a href="https://www.freepik.com/free-photos-vectors/icon">Icon vector created by freepik - www.freepik.com</a></span>
-				Font by <a href="http://www.fontspace.com/sharkshock/papaya-sunrise">fontspace</a>
-				<a href="https://www.freepik.com/free-photos-vectors/icon">Icon vector created by freepik - www.freepik.com</a>
-
-			</p>
-		</section>
 	</div>
 </div>
 
 
 <div id="fire"></div>
+<div id="credits">Lighthouse illustrstion by <a href="http://www.juliawolter.com/">Julia Wolter</a>,
+	<a href="https://publicdomainvectors.org/en/free-clipart/Grumpy-cat/38336.html">Grumpy cat image</a>,
+	Some images was taken from <a href="https://www.freepik.com">Freepik (freepik, jannoon028, rawpixel.com, sergey_kandakov, vilmosvarga)</a>,
+	Fonts by <a href="http://www.fontspace.com/sharkshock/papaya-sunrise">fontspace</a>,
+	<a href="https://www.1001fonts.com/xirwena-font.html">1001fonts</a>, <a href="https://www.fontsquirrel.com/fonts/poiret-one">fontsquirrel</a>
+	<span>♥</span>
+</div>
 
-<script src="lib/js/head.min.js"></script>
-<script src="js/reveal.js"></script>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
 
-<script>
-    // More info about config & dependencies:
-    // - https://github.com/hakimel/reveal.js#configuration
-    // - https://github.com/hakimel/reveal.js#dependencies
-    Reveal.initialize({
-        history: true,
-        dependencies: [
-            {src: 'plugin/markdown/marked.js'},
-            {src: 'plugin/markdown/markdown.js'},
-            {src: 'plugin/notes/notes.js', async: true},
-            {src: 'plugin/highlight/highlight.js', async: true, callback: waitForHLJS},
-            {src: 'bower_components/jquery/dist/jquery.min.js'},
-            {src: 'js/animations.js'},
-            {src: 'js/fear_chart.js'},
-            {src: 'js/popularity_chart.js'},
-            {src: 'js/skills_chart.js'},
-            {src: 'plugin/alt-arrows/alt-arrows.js', async: true},
-            {src: 'plugin/blur-background/blur-background.js'},
-            {src: 'plugin/loader-splashscreen/loader-splashscreen.js'},
-            {src: 'plugin/code-fragment-highlight/code-fragment-highlight.js'},
-            {src: 'plugin/global-fragments/global-fragments.js'},
-            {src: 'plugin/script-runner/script-runner.js'},
-            {src: 'plugin/chartist/chartist.js'},
-            {src: 'plugin/chartist/chartist-plugin-legend/chartist-plugin-legend.js'},
-            {src: 'plugin/particles/anime.min.js'},
-            {src: 'plugin/particles/particles.js'},
-        ],
-        keyboard: {
-            39: 'next',
-            37: 'prev',
-            49: function () {
-                popularityPollData.nontech += 1;
-                if (popularity_chart) popularity_chart.update(popularityPollData);
-            },
-            50: function () {
-                popularityPollData.tech += 1;
-                if (popularity_chart) popularity_chart.update(popularityPollData);
-            }
-        },
-        script_runner: {
-            'data-black-bg': {
-                'slidechanged': function (slide) {
-                    if (slide.currentSlide.hasAttribute('data-black-bg')) {
-                        $('body').css('background-color', 'black');
-                    }
-                }
-            },
-            'data-storm-sound-start': {
-                'slidechanged': function () {
-                    audioStorm.play();
-                }
-            },
-            'data-storm-sound-end': {
-                'slidechanged': function () {
-                    audioStorm.pause();
-                }
-            },
-            'data-chart-fear-init': {
-                'slidechanged': function (event, data) {
-                    let slide = event.currentSlide;
-                    let container = slide.getElementsByClassName('chart')[0];
-                    fear_chart = new FearChart(container);
-                    if (data) {
-                        const parsed = JSON.parse(data);
-                        fear_chart.update({
-                            series: new Array(parsed)
-                        });
-                    }
-                }
-            },
-            'data-chart-fear': {
-                'fragmentshown': (_, data) => {
-                    updateFearChart(data, true)
-                },
-                'fragmenthidden': (_, data) => {
-                    updateFearChart(data, false)
-                },
-            },
-            'data-next-after': {
-                'slidechanged': function (_, data) {
-                    moveNext(data);
-                },
-                'fragmentshown': (_, data) => {
-                    moveNext(data);
-                },
-                'fragmenthidden': (_, data) => {
-                    moveNext(data);
-                },
-            },
-            'data-chart-poll': {
-                'slidechanged': function (event) {
-                    let slide = event.currentSlide;
-                    let container = slide.getElementsByClassName('chart')[0];
-                    popularity_chart = new PopularityChart(container, popularityPollData);
+	<script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+          history: true,
+          dependencies: [
+              {src: 'plugin/markdown/marked.js'},
+              {src: 'plugin/markdown/markdown.js'},
+              {src: 'plugin/notes/notes.js', async: true},
+              {src: 'plugin/highlight/highlight.js', async: true, callback: waitForHLJS},
+              {src: 'bower_components/jquery/dist/jquery.min.js'},
+              {src: 'js/animations.js'},
+              {src: 'js/fear_chart.js'},
+              {src: 'js/popularity_chart.js'},
+              {src: 'js/skills_chart.js'},
+              {src: 'plugin/alt-arrows/alt-arrows.js', async: true},
+              {src: 'plugin/blur-background/blur-background.js'},
+              {src: 'plugin/loader-splashscreen/loader-splashscreen.js'},
+              {src: 'plugin/code-fragment-highlight/code-fragment-highlight.js'},
+              {src: 'plugin/global-fragments/global-fragments.js'},
+              {src: 'plugin/script-runner/script-runner.js'},
+              {src: 'plugin/chartist/chartist.js'},
+              {src: 'plugin/chartist/chartist-plugin-legend/chartist-plugin-legend.js'},
+              {src: 'plugin/particles/anime.min.js'},
+              {src: 'plugin/particles/particles.js'},
+          ],
+          keyboard: {
+              39: 'next',
+              37: 'prev',
+              49: function () {
+                  popularityPollData.nontech += 1;
+                  if (popularity_chart) popularity_chart.update(popularityPollData);
+              },
+              50: function () {
+                  popularityPollData.tech += 1;
+                  if (popularity_chart) popularity_chart.update(popularityPollData);
+              }
+          },
+          script_runner: {
+              'data-black-bg': {
+                  'slidechanged': function (slide) {
+                      if (slide.currentSlide.hasAttribute('data-black-bg')) {
+                          $('body').css('background-color', 'black');
+                      }
+                  }
+              },
+              'data-storm-sound-start': {
+                  'slidechanged': function () {
+                      audioStorm.play();
+                  }
+              },
+              'data-storm-sound-end': {
+                  'slidechanged': function () {
+                      audioStorm.pause();
+                  }
+              },
+              'data-chart-fear-init': {
+                  'slidechanged': function (event, data) {
+                      let slide = event.currentSlide;
+                      let container = slide.getElementsByClassName('chart')[0];
+                      fear_chart = new FearChart(container);
+                      if (data) {
+                          const parsed = JSON.parse(data);
+                          fear_chart.update({
+                              series: new Array(parsed)
+                          });
+                      }
+                  }
+              },
+              'data-chart-fear': {
+                  'fragmentshown': (_, data) => {
+                      updateFearChart(data, true)
+                  },
+                  'fragmenthidden': (_, data) => {
+                      updateFearChart(data, false)
+                  },
+              },
+              'data-next-after': {
+                  'slidechanged': function (_, data) {
+                      moveNext(data);
+                  },
+                  'fragmentshown': (_, data) => {
+                      moveNext(data);
+                  },
+                  'fragmenthidden': (_, data) => {
+                      moveNext(data);
+                  },
+              },
+              'data-chart-poll': {
+                  'slidechanged': function (event) {
+                      let slide = event.currentSlide;
+                      let container = slide.getElementsByClassName('chart')[0];
+                      popularity_chart = new PopularityChart(container, popularityPollData);
 
-                }
-            },
-            'data-show-fire': {
-                'slidechanged': function (_) {
-                    $("#fire").show();
-                }
-            },
-            'data-parallax': {
-                'slidechanged': function () {
-                    Reveal.configure({
-                        parallaxBackgroundImage: 'img/iceberg-parallax.png',
-                        parallaxBackgroundSize: '1920px 2160px',
-                        parallaxBackgroundHorizontal: 1920,
-                        parallaxBackgroundVertical: 1080
+                  }
+              },
+              'data-show-fire': {
+                  'slidechanged': function (_) {
+                      $("#fire").show();
+                  }
+              },
+              'data-parallax': {
+                  'slidechanged': function () {
+                      Reveal.configure({
+                          parallaxBackgroundImage: 'img/iceberg-parallax.png',
+                          parallaxBackgroundSize: '1920px 2160px',
+                          parallaxBackgroundHorizontal: 1920,
+                          parallaxBackgroundVertical: 1080
 
-                    });
-                }
-            },
-            'data-parallax-end': {
-                'slidechanged': function () {
-                    Reveal.configure({
-                        parallaxBackgroundImage: null,
-                        parallaxBackgroundSize: null,
+                      });
+                  }
+              },
+              'data-parallax-end': {
+                  'slidechanged': function () {
+                      Reveal.configure({
+                          parallaxBackgroundImage: null,
+                          parallaxBackgroundSize: null,
 
 
-                    });
-                }
-            },
-            'data-particle': {
-                'slidechanged': function (event) {
-                    let slide = event.currentSlide;
-                    let container = slide.getElementsByClassName('particles-container')[0];
+                      });
+                  }
+              },
+              'data-particle': {
+                  'slidechanged': function (event) {
+                      let slide = event.currentSlide;
+                      let container = slide.getElementsByClassName('particles-container')[0];
 
-                    setTimeout(() => {
-                        const bttn = container.querySelector('.particles-text');
-                        const particles = new Particles(bttn, {color: "#2B011E"});
-                        particles.disintegrate();
-                    }, 2000);
+                      setTimeout(() => {
+                          const bttn = container.querySelector('.particles-text');
+                          const particles = new Particles(bttn, {color: "#2B011E"});
+                          particles.disintegrate();
+                      }, 2000);
 
-                }
-            },
+                  }
+              },
 
-            'data-chart-skills-init': {
-                'slidechanged': function (event, data) {
-                    let slide = event.currentSlide;
-                    let container = slide.getElementsByClassName('chart')[0];
-                    var parsed = JSON.parse(data);
-                    skills_chart = new SkillsChart(container, parsed);
-                }
-            },
-            'data-chart-skills': {
-                'fragmentshown': (_, data) => {
-                    updateSkillsChart(data)
-                }
-            },
-        }
-    });
+              'data-chart-skills-init': {
+                  'slidechanged': function (event, data) {
+                      let slide = event.currentSlide;
+                      let container = slide.getElementsByClassName('chart')[0];
+                      var parsed = JSON.parse(data);
+                      skills_chart = new SkillsChart(container, parsed);
+                  }
+              },
+              'data-chart-skills': {
+                  'fragmentshown': (_, data) => {
+                      updateSkillsChart(data)
+                  }
+              },
+              'data-credits': {
+                  'slidechanged': function () {
+                      $("#credits").show();
+                  }
+              },
+          }
+      });
 
-    const audioStorm = new Audio('audio/storm.mp3');
-    let fear_chart;
-    let popularity_chart;
-    let skills_chart;
-    let popularityPollData = {nontech: 0, tech: 0};
+      const audioStorm = new Audio('audio/storm.mp3');
+      let fear_chart;
+      let popularity_chart;
+      let skills_chart;
+      let popularityPollData = {nontech: 0, tech: 0};
 
-    function waitForHLJS() {
-        if (window.hljs) {
-            hljs.initHighlightingOnLoad();
-            return;
-        }
-        console.log('Waiting for hljs');
-        setTimeout(waitForHLJS, 1000);
-    }
+      function waitForHLJS() {
+          if (window.hljs) {
+              hljs.initHighlightingOnLoad();
+              return;
+          }
+          console.log('Waiting for hljs');
+          setTimeout(waitForHLJS, 1000);
+      }
 
-    function cleanupEffects() {
-        $('body').css('background-color', 'white');
-        if (popularity_chart) popularity_chart.isVisible = false;
-        $("#fire").hide();
-    }
+      function cleanupEffects() {
+          $('body').css('background-color', 'white');
+          if (popularity_chart) popularity_chart.isVisible = false;
+          $("#fire").hide();
+          $("#credits").hide();
+      }
 
-    function updateFearChart(data, show) {
-        const parsed = JSON.parse(data);
-        fear_chart.update({
-            series: new Array(show ? parsed.show : parsed.hide)
-        });
-    }
+      function updateFearChart(data, show) {
+          const parsed = JSON.parse(data);
+          fear_chart.update({
+              series: new Array(show ? parsed.show : parsed.hide)
+          });
+      }
 
-    function updateSkillsChart(data) {
-        const parsed = JSON.parse(data);
-        skills_chart.update(parsed);
-    }
+      function updateSkillsChart(data) {
+          const parsed = JSON.parse(data);
+          skills_chart.update(parsed);
+      }
 
-    function moveNext(delay) {
-        setTimeout(Reveal.next, delay);
-    }
+      function moveNext(delay) {
+          setTimeout(Reveal.next, delay);
+      }
 
-    Reveal.addEventListener('slidechanged', function () {
-        cleanupEffects();
-    });
+      Reveal.addEventListener('slidechanged', function () {
+          cleanupEffects();
+      });
 
-    Reveal.addEventListener('slidechanged', function (event) {
-        var chart = event.currentSlide.querySelector('.chart');
-        if (chart && chart.__chartist__) {
-            chart.__chartist__.update();
-        }
-    });
+      Reveal.addEventListener('slidechanged', function (event) {
+          var chart = event.currentSlide.querySelector('.chart');
+          if (chart && chart.__chartist__) {
+              chart.__chartist__.update();
+          }
+      });
 
-</script>
+	</script>
 </body>
 </html>

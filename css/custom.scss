@@ -389,6 +389,17 @@
   display: none;
 }
 
+#credits {
+  display: none;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  &, a, a:visited, a:hover {
+    color: rgba(0, 0, 0, 0.56)
+  }
+}
+
 @keyframes fadeout {
   from {
     opacity: 1;
