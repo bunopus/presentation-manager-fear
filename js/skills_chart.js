@@ -20,7 +20,7 @@ class SkillsChart {
             },
             plugins: [
                 Chartist.plugins.legend({
-                    legendNames: ['Другого чувака', 'Твои'],
+                    legendNames: ['чувака из компании', 'Твои'],
                 })
             ]
         });
@@ -29,9 +29,8 @@ class SkillsChart {
             if (data.type === 'bar') {
                 data.element.animate({
                     y2: {
-                        begin: 600,
                         dur: '0.5s',
-                        from: data.y1,
+                        from: data.y1-50,
                         to: data.y2
                     }
                 });

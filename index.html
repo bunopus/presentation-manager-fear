@@ -238,6 +238,7 @@
 			<section><img src="img/mitings-crop.png" style="width: 900px"></section>
 			<section data-background="img/lenin.png"></section>
 			<section data-background="img/holy-war.png"><h2>Инженерный шовинизм</h2></section>
+			<section data-background="img/advise.png" class="advise"><h3>Напишите на бейджике <span class="highlighted"><span class="missed-font">"</span>Менеджер<span class="missed-font">"</span></span> и идите на афтерпати</h3></section>
 			<section><img src="img/arkady/normal.jpg"></section>
 		</section>
 
@@ -274,8 +275,9 @@
 			<section data-chart-skills-init='{"labels":["Hard Skills","Soft Skills"],"series":[[9, 4]]}'>
 				<h5 style="color: rgba(0,0,0,.4)">Навыки</h5>
 				<div class="chart bar-chart skills" style="width: 1000px; height: 600px; font-size:16px"></div>
-				<div class="fragment" data-chart-skills='{"series":[[9, 4],[3, 8]]}'></div>
-				<div class="fragment" data-chart-skills='{"labels":["Hard Skills","Soft Skills", "Company Skills"], "series":[[9, 4, 10],[3, 8, 1]]}'></div>
+				<div class="fragment" data-chart-skills='{"series":[[9, 3],[8, 8]]}'></div>
+				<div class="fragment" data-chart-skills='{"series":[[0, 3],[0, 8]]}'></div>
+				<div class="fragment" data-chart-skills='{"labels":["Hard Skills","Soft Skills", "Company Skills"], "series":[[8, 8, 10],[8, 8, 1]]}'></div>
 			</section>
 
 			<section data-background="black">
@@ -283,8 +285,7 @@
 				<h3><span class="yellow-highlight">Менеджеру</span> платят за доверие и ответственность</h3>
 			</section>
 
-			<section data-background="img/white-pyramid.png"><h3>Менеджер <span class="missed-font">-</span> самый
-				универсальный сотрудник</h3></section>
+
 			<section data-background="img/resume/1.png" data-transition="none none"
 							 data-background-transition="none none"></section>
 			<section data-background="img/resume/2.png" data-transition="none none"
@@ -295,9 +296,20 @@
 							 data-background-transition="none none"></section>
 			<section data-background="img/advise.png" class="advise"><h3>Проблемы, которые вы решаете <span
 							class="missed-font">-</span> это ваши <span class="highlighted">Hard Skills</span></h3></section>
+			<section data-background="img/advise.png" class="advise"><h3>Напишите план <span class="highlighted">30<span
+							class="missed-font">-</span>60<span
+							class="missed-font">-</span>90</span></h3></section>
 		</section>
 
 		<section>
+			<section data-background="img/white-pyramid.png" data-particle>
+				<div class="particles-container">
+					<div>
+						<div class="particles-text"><h1>Отвращение</h1></div>
+					</div>
+				</div>
+			</section>
+			<section></section>
 			<section data-parallax class="stretch">
 				<div class="manager-bad">
 					<div class="mgr-word-1 fragment">Менеджер</div>
@@ -316,12 +328,15 @@
 			<section data-parallax-end data-transition="none none"
 							 data-background-transition="none none" data-background="img/iceberg-parallax-bottom.png">
 				<div class="manager-good">
-					<h4><span class="missed-font">-</span> Каждый день что<span class="missed-font">-</span>то новое</h4>
+					<h4><span class="missed-font">-</span> куча творчества</h4>
 					<h4 class="fragment"><span class="missed-font">-</span> Больше возможностей</h4>
 					<h4 class="fragment"><span class="missed-font">-</span> Сам себе придумываешь цели</h4>
 					<h4 class="fragment"><span class="missed-font">-</span> Свобода</h4>
 				</div>
 			</section>
+
+			<section data-background="img/white-pyramid.png"><h3>Менеджер <span class="missed-font">-</span> самый
+				универсальный сотрудник</h3></section>
 			<section data-background="img/advise.png" class="advise"><h3>Менеджером быть очень интересно</h3>
 			</section>
 		</section>
@@ -527,7 +542,7 @@
                         const bttn = container.querySelector('.particles-text');
                         const particles = new Particles(bttn, {color: "#2B011E"});
                         particles.disintegrate();
-                    }, 3000);
+                    }, 2000);
 
                 }
             },
