@@ -125,7 +125,7 @@
 
   .idea-number {
     line-height: 1.3;
-    font-family: fantasy;
+    font-family: "Comic Sans MS", fantasy;
     color: #cccccca3;
     &::before {
       content: '#';
@@ -321,13 +321,25 @@
 
   .info {
 
+    .social {
+      display: flex;
+      &>div {
+        flex: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
     .twitter {
       img {
         width: 60px;
         padding-right: 10px;
         opacity: 0.9;
       }
-      padding-bottom: 50px;
+    }
+    
+    .social-icons {
+      padding-bottom: 10px;
     }
 
     img.small-logo {
@@ -336,10 +348,6 @@
       vertical-align: middle;
       border-radius: 0;
       padding-right: 5px;
-    }
-
-    .team-text {
-      padding-top: 20px;
     }
 
     a {
