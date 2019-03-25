@@ -14,7 +14,7 @@
 .reveal div.slide-background.present[data-background-hash="nullcovernullimg/lighthouse.mp4nullblacknullnullnullnull"] {
   animation: fadeout 63s forwards; }
 
-.reveal div.slide-background.present[data-background-hash="img/east-wisdom.pngnullnullnullnullwhitenullnullnullnull"] {
+.reveal div.slide-background[data-background-hash="img/east-wisdom.pngnullnullnullnullwhitenullnullnullnull"] {
   opacity: 0.2; }
 
 .reveal .manuscript {
