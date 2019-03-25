@@ -109,8 +109,6 @@
 .reveal .locus {
   display: -ms-flexbox;
   display: flex; }
-  .reveal .locus img {
-    height: 500px; }
 
 .reveal .feelings-list {
   margin: 0 auto;
