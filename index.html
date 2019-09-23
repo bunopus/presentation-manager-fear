@@ -36,34 +36,37 @@
 		<section data-background="#FFFFFF"><img class="fragment" data-duration="2" data-animate="fadeIn"
 																						src="img/ministry.png"></section>
 		<section data-background-video="img/lighthouse.mp4" data-background-color="black" data-background-size="cover"
-						 data-bg-lighthouse data-background-video-loop="loop" data-black-bg data-storm-sound-start></section>
+						 data-bg-lighthouse data-background-video-loop="loop" data-black-bg data-storm-sound-start>
+			<span class="fragment" data-knock-sound></span>
+		</section>
 
 		<section data-background="img/title.png" data-background-transition="none" data-transition="none"></section>
 
-		<section data-background="img/about.png">
-			<div class="manuscript">
-				<h4 style="text-transform: none">About me</h4>
-				<p>
-					If heaven ever wanted to do a good deed for me,
-					then such would be the complete elimination of the consequences of an accidental confluence
-					circumstances, which prompted me to take a look at one paper. In another
-					the situation could not make me look at this old number
-					of the Australian magazine "Sydney Bulletin" dated April 18, 1925. is he
-					escaped from the attention and the firm that was engaged in the collection of newspaper and
-					journal clippings for my grandfather,
-					By that time, I almost quit studying what my grandfather called "The Cult
-					Ctulhu ", and was visiting one of his friend, a scientist from Paterson,
-					the state of New Jersey, the custodian of a local museum, a fairly well-known specialist
-					on mineralogy. Considering somehow samples of stones from the museum’s storerooms, I
-					drew attention to a strange image on old paper, laid on
-					shelf under the stones. This was exactly the "Sydney Bulletin", which I
-					I will mention ~ 1, and the picture was made by the method of autotype
-					image of a scary stone figure, almost identical to the one that Legress
-					found in the marshes.
-				</p>
-			</div>
-			<img src="img/skull.png">
-		</section>
+<!--		<section data-background="img/about.png">-->
+<!--			<div class="manuscript">-->
+<!--				<h4 style="text-transform: none">About me</h4>-->
+<!--				<p>-->
+<!--					If heaven ever wanted to do a good deed for me,-->
+<!--					then such would be the complete elimination of the consequences of an accidental confluence-->
+<!--					circumstances, which prompted me to take a look at one paper. In another-->
+<!--					the situation could not make me look at this old number-->
+<!--					of the Australian magazine "Sydney Bulletin" dated April 18, 1925. is he-->
+<!--					escaped from the attention and the firm that was engaged in the collection of newspaper and-->
+<!--					journal clippings for my grandfather,-->
+<!--					By that time, I almost quit studying what my grandfather called "The Cult-->
+<!--					Ctulhu ", and was visiting one of his friend, a scientist from Paterson,-->
+<!--					the state of New Jersey, the custodian of a local museum, a fairly well-known specialist-->
+<!--					on mineralogy. Considering somehow samples of stones from the museum’s storerooms, I-->
+<!--					drew attention to a strange image on old paper, laid on-->
+<!--					shelf under the stones. This was exactly the "Sydney Bulletin", which I-->
+<!--					I will mention ~ 1, and the picture was made by the method of autotype-->
+<!--					image of a scary stone figure, almost identical to the one that Legress-->
+<!--					found in the marshes.-->
+<!--				</p>-->
+<!--			</div>-->
+<!--			<img src="img/skull.png">-->
+<!--		</section>-->
+
 		<section>
 			<section data-storm-sound-end data-background="img/arkady/1_arkady.png"></section>
 		</section>
@@ -453,6 +456,7 @@
     // - https://github.com/hakimel/reveal.js#dependencies
     Reveal.initialize({
         history: true,
+				controls: false,
         dependencies: [
             {src: 'plugin/markdown/marked.js'},
             {src: 'plugin/markdown/markdown.js'},
@@ -496,13 +500,30 @@
             },
             'data-storm-sound-start': {
                 'slidechanged': function () {
-                    audioStorm.play();
+                    if(!Reveal.isSpeakerNotes()) {
+                        audioStorm.play();
+                    }
                 }
             },
             'data-storm-sound-end': {
                 'slidechanged': function () {
-                    audioStorm.pause();
+                    if(!Reveal.isSpeakerNotes()) {
+                        audioStorm.pause();
+                    }
                 }
+            },
+            'data-knock-sound': {
+                'fragmentshown': () => {
+                    if(!Reveal.isSpeakerNotes()) {
+                        audioKnock.play();
+                    }
+                },
+                'fragmenthidden': () => {
+                    if(!Reveal.isSpeakerNotes()) {
+                        audioKnock.play();
+
+                    }
+                },
             },
             'data-chart-fear-init': {
                 'slidechanged': function (event, data) {
@@ -606,6 +627,7 @@
     });
 
     const audioStorm = new Audio('audio/storm.mp3');
+    const audioKnock = new Audio('audio/knock.mp3');
     let fear_chart;
     let popularity_chart;
     let skills_chart;
