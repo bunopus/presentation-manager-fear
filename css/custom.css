@@ -235,10 +235,24 @@
     -ms-flex-pack: center;
         justify-content: center; }
 
-.reveal .info .twitter img {
-  width: 60px;
-  padding-right: 10px;
-  opacity: 0.9; }
+.reveal .info .twitter {
+  -ms-flex-pack: end;
+      justify-content: flex-end;
+  padding-right: 50px; }
+  .reveal .info .twitter img {
+    width: 60px;
+    padding-right: 10px;
+    opacity: 0.9; }
+
+.reveal .info .wrike {
+  -ms-flex-pack: start;
+      justify-content: flex-start; }
+  .reveal .info .wrike a:not(.href-icon) {
+    padding-right: 10px; }
+  .reveal .info .wrike img {
+    width: 60px;
+    padding-right: 10px;
+    opacity: 0.9; }
 
 .reveal .info .social-icons {
   padding-bottom: 10px; }
@@ -252,6 +266,9 @@
 
 .reveal .info a {
   color: #100007; }
+  .reveal .info a:hover img {
+    box-shadow: none;
+    border: none; }
 
 .reveal .particles-container {
   display: -ms-flexbox;
@@ -276,6 +293,12 @@
 .reveal .sub-description {
   font-size: 20px;
   font-family: 'Comic Sans MS', cursive; }
+
+.reveal .instructions {
+  font-family: roboto_mono, monospace;
+  font-size: 20px; }
+  .reveal .instructions .hint {
+    background-color: #ffcc68; }
 
 #fire {
   position: absolute;

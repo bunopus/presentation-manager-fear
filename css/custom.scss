@@ -335,6 +335,20 @@
         padding-right: 10px;
         opacity: 0.9;
       }
+      justify-content: flex-end;
+      padding-right: 50px;
+    }
+    .wrike {
+      justify-content: flex-start;
+      a:not(.href-icon) {
+        padding-right: 10px;
+      }
+
+      img {
+        width: 60px;
+        padding-right: 10px;
+        opacity: 0.9;
+      }
     }
 
     .social-icons {
@@ -351,6 +365,12 @@
 
     a {
       color: $smocky_black;
+      &:hover {
+        img {
+          box-shadow: none;
+          border: none;
+        }
+      }
     }
   }
 
@@ -379,6 +399,14 @@
   .sub-description {
     font-size: 20px;
     font-family: 'Comic Sans MS', cursive
+  }
+
+  .instructions {
+    font-family: roboto_mono, monospace;
+    font-size: 20px;
+    .hint {
+      background-color: #ffcc68;
+    }
   }
 
 }
